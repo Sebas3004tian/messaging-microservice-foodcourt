@@ -29,11 +29,12 @@ public class TwilioAdapter implements ISmsProviderPort {
     }
 
     @Override
-    public void sendSms(Sms sms) {
-        Message.creator(
+    public String sendSms(Sms sms) {
+        Message message = Message.creator(
                 new PhoneNumber(sms.getPhoneNumber()),
                 new PhoneNumber(fromPhone),
                 sms.getMessage()
         ).create();
+       return message.getBody();
     }
 }
