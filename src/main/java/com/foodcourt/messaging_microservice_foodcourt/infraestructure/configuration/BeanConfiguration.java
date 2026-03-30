@@ -1,10 +1,8 @@
 package com.foodcourt.messaging_microservice_foodcourt.infraestructure.configuration;
 
 import com.foodcourt.messaging_microservice_foodcourt.domain.api.ISmsServicePort;
-import com.foodcourt.messaging_microservice_foodcourt.domain.spi.IJwtServicePort;
 import com.foodcourt.messaging_microservice_foodcourt.domain.spi.ISmsProviderPort;
 import com.foodcourt.messaging_microservice_foodcourt.domain.usecase.SmsUseCase;
-import com.foodcourt.messaging_microservice_foodcourt.infraestructure.output.security.adapter.JwtServiceAdapter;
 import com.foodcourt.messaging_microservice_foodcourt.infraestructure.output.twilio.adapter.TwilioAdapter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;

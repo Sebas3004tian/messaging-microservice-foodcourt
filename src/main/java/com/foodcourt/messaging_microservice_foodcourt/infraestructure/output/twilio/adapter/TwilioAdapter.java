@@ -2,6 +2,9 @@ package com.foodcourt.messaging_microservice_foodcourt.infraestructure.output.tw
 
 import com.foodcourt.messaging_microservice_foodcourt.domain.model.Sms;
 import com.foodcourt.messaging_microservice_foodcourt.domain.spi.ISmsProviderPort;
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+import com.twilio.type.PhoneNumber;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -22,19 +25,15 @@ public class TwilioAdapter implements ISmsProviderPort {
         this.authToken = authToken;
         this.fromPhone = fromPhone;
 
-        System.out.println("accountSid = " + accountSid);
-        System.out.println("authToken = " + authToken);
-        //Twilio.init(accountSid, authToken);
+        Twilio.init(accountSid, authToken);
     }
 
     @Override
     public void sendSms(Sms sms) {
-        System.out.println("SMS - " + sms.getPhoneNumber() + " | " + sms.getMessage());
-        System.out.println("From phone = " + fromPhone);
-        /*Message.creator(
+        Message.creator(
                 new PhoneNumber(sms.getPhoneNumber()),
                 new PhoneNumber(fromPhone),
                 sms.getMessage()
-        ).create();*/
+        ).create();
     }
 }
