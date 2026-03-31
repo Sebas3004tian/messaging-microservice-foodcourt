@@ -7,7 +7,6 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,9 +24,9 @@ public class SmsRestController {
             @ApiResponse(responseCode = "400", description = "Invalid data"),
             @ApiResponse(responseCode = "403", description = "Access Denied")
     })
-    public ResponseEntity<Void> sendSms(@Valid @RequestBody SendSmsRequestDto sendSmsRequestDto){
-        smsHandler.sendSms(sendSmsRequestDto);
-        return ResponseEntity.status(HttpStatus.ACCEPTED).build();
+    public ResponseEntity<String> sendSms(@Valid @RequestBody SendSmsRequestDto sendSmsRequestDto){
+        String smsSent = smsHandler.sendSms(sendSmsRequestDto);
+        return ResponseEntity.ok(smsSent);
     }
 
 }

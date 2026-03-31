@@ -17,10 +17,9 @@ public class SmsHandler implements ISmsHandler {
     private final ISmsRequestMapper smsRequestMapper;
 
     @Override
-    public void sendSms(SendSmsRequestDto sendSmsRequestDto){
+    public String sendSms(SendSmsRequestDto sendSmsRequestDto){
         Sms sms = smsRequestMapper.toSms(sendSmsRequestDto);
-        smsServicePort.sendSms(sms);
-
+        return smsServicePort.sendSms(sms);
     }
 
 }

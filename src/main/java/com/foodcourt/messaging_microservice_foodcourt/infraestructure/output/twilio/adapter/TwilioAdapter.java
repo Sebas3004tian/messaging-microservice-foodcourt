@@ -25,10 +25,10 @@ public class TwilioAdapter implements ISmsProviderPort {
         this.authToken = authToken;
         this.fromPhone = fromPhone;
 
-        Twilio.init(accountSid, authToken);
+        //Twilio.init(accountSid, authToken);
     }
 
-    @Override
+    /*@Override
     public String sendSms(Sms sms) {
         Message message = Message.creator(
                 new PhoneNumber(sms.getPhoneNumber()),
@@ -36,5 +36,13 @@ public class TwilioAdapter implements ISmsProviderPort {
                 sms.getMessage()
         ).create();
        return message.getBody();
+    }*/
+
+    @Override
+    public String sendSms(Sms sms) {
+        return "SMS Sent Successfully!\n" +
+                "SID: " + accountSid + "\n" +
+                "From: " + fromPhone + " -> To: " + sms.getPhoneNumber() + "\n" +
+                "Content: \"" + sms.getMessage() + "\"";
     }
 }

@@ -13,8 +13,8 @@ public class SmsUseCase implements ISmsServicePort {
     }
 
     @Override
-    public void sendSms(Sms sms){
-        smsProviderPort.sendSms(sms);
+    public String sendSms(Sms sms){
+        return smsProviderPort.sendSms(sms);
     }
 
 }
