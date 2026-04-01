@@ -1,10 +1,7 @@
-package com.foodcourt.messaging_microservice_foodcourt.infraestructure.output.twilio.adapter;
+package com.foodcourt.messaging_microservice_foodcourt.infrastructure.output.twilio.adapter;
 
 import com.foodcourt.messaging_microservice_foodcourt.domain.model.Sms;
 import com.foodcourt.messaging_microservice_foodcourt.domain.spi.ISmsProviderPort;
-import com.twilio.Twilio;
-import com.twilio.rest.api.v2010.account.Message;
-import com.twilio.type.PhoneNumber;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 

@@ -1,4 +1,4 @@
-package com.foodcourt.messaging_microservice_foodcourt.infraestructure.input.rest;
+package com.foodcourt.messaging_microservice_foodcourt.infrastructure.input.rest;
 
 import com.foodcourt.messaging_microservice_foodcourt.application.dto.request.SendSmsRequestDto;
 import com.foodcourt.messaging_microservice_foodcourt.application.handler.ISmsHandler;
@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -17,6 +18,7 @@ public class SmsRestController {
 
     private final ISmsHandler smsHandler;
 
+    @PreAuthorize("hasRole('EMPLEADO')")
     @PostMapping("/send")
     @Operation(summary = "Send an sms")
     @ApiResponses(value = {
