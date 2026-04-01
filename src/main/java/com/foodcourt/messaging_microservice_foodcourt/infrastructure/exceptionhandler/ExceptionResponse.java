@@ -1,4 +1,4 @@
-package com.foodcourt.messaging_microservice_foodcourt.infraestructure.exceptionhandler;
+package com.foodcourt.messaging_microservice_foodcourt.infrastructure.exceptionhandler;
 
 
 public enum ExceptionResponse {

@@ -1,4 +1,4 @@
-package com.foodcourt.messaging_microservice_foodcourt.infraestructure.exceptionhandler;
+package com.foodcourt.messaging_microservice_foodcourt.infrastructure.exceptionhandler;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
